@@ -1,0 +1,31 @@
+# .github/workflows/docker-build-and-push.yml
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Log in to Azure Container Registry
+      uses: azure/docker-login@v1
+      with:
+        login-server: <nome_do_registro>.azurecr.io
+        username: ${{ secrets.ACR_USERNAME }}
+        password: ${{ secrets.ACR_PASSWORD }}
+
+    - name: Build Docker image
+      run: |
+        docker build -t <nome_do_registro>.azurecr.io/pet-flow-cloud-api:latest -f backend/Dockerfile ./backend
+        docker build -t <nome_do_registro>.azurecr.io/pet-flow-cloud-app:latest -f frontend/Dockerfile ./frontend
+
+    - name: Push Docker image to ACR
+      run: |
+        docker push <nome_do_registro>.azurecr.io/pet-flow-cloud-api:latest
+        docker push <nome_do_registro>.azurecr.io/pet-flow-cloud-app:latest
