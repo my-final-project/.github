@@ -1,6 +1,6 @@
-# Pet Flow Cloud
+# PetConnect
 
-Pet Flow Cloud, une a ideia de fluidez nos processos com a operação na nuvem, destacando a integração e a eficiência.
+PetConnect, une a ideia de fluidez nos processos com a operação na nuvem, destacando a integração e a eficiência.
 
 **Curso**: Sistemas de Informação  
 **Projeto Final**: Implementação  
@@ -16,6 +16,7 @@ Pet Flow Cloud, une a ideia de fluidez nos processos com a operação na nuvem, 
 
 ### Repositórios
 
-* [Frontend](https://github.com/my-final-project/frontend)
-* [Backend](https://github.com/my-final-project/backend)
+* [Frontend - Final](https://github.com/JulianeMaran32/final_project_petshop_app)
+* [Backend - Final](https://github.com/JulianeMaran32/final_project_petshop_api)
 * [Documentação](https://github.com/my-final-project/documents)
+  
